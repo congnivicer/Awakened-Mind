@@ -1,0 +1,125 @@
+{
+  "collections": {
+    "github_projects": {
+      "description": "Repository knowledge and code patterns",
+      "embedding_function": "sentence-transformers",
+      "metadata_schema": {
+        "repository_url": "string",
+        "language": "string",
+        "stars": "integer",
+        "last_updated": "timestamp",
+        "owner": "string",
+        "topics": "array"
+      },
+      "storage_provider": "zilliz",
+      "max_vectors": 500000,
+      "priority": "high"
+    },
+    "technical_docs": {
+      "description": "Documentation and technical resources",
+      "embedding_function": "sentence-transformers",
+      "metadata_schema": {
+        "doc_type": "string",
+        "source_url": "string",
+        "framework": "string",
+        "difficulty": "string",
+        "tags": "array"
+      },
+      "storage_provider": "zilliz",
+      "max_vectors": 400000,
+      "priority": "high"
+    },
+    "nhb_interactions": {
+      "description": "Conversation history and learning patterns",
+      "embedding_function": "gemini-pro",
+      "metadata_schema": {
+        "conversation_id": "string",
+        "user_id": "string",
+        "timestamp": "timestamp",
+        "interaction_type": "string",
+        "sentiment": "float",
+        "topics": "array"
+      },
+      "storage_provider": "zilliz",
+      "max_vectors": 600000,
+      "priority": "critical"
+    },
+    "current_events": {
+      "description": "Real-time information and updates",
+      "embedding_function": "sentence-transformers",
+      "metadata_schema": {
+        "source": "string",
+        "category": "string",
+        "relevance_score": "float",
+        "timestamp": "timestamp",
+        "geographic_region": "string"
+      },
+      "storage_provider": "zilliz",
+      "max_vectors": 300000,
+      "priority": "medium",
+      "ttl_days": 30
+    },
+    "code_patterns": {
+      "description": "Reusable code templates and solutions",
+      "embedding_function": "sentence-transformers",
+      "metadata_schema": {
+        "language": "string",
+        "pattern_type": "string",
+        "complexity": "string",
+        "use_cases": "array",
+        "performance_rating": "float"
+      },
+      "storage_provider": "zilliz",
+      "max_vectors": 700000,
+      "priority": "high"
+    },
+    "collective_wisdom": {
+      "description": "Aggregated insights and knowledge synthesis",
+      "embedding_function": "gemini-pro",
+      "metadata_schema": {
+        "wisdom_type": "string",
+        "confidence_score": "float",
+        "source_count": "integer",
+        "domain": "string",
+        "validation_status": "string"
+      },
+      "storage_provider": "zilliz",
+      "max_vectors": 500000,
+      "priority": "critical"
+    },
+    "realtime_cache": {
+      "description": "Fast-access session data",
+      "embedding_function": "sentence-transformers",
+      "metadata_schema": {
+        "session_id": "string",
+        "user_context": "object",
+        "cache_type": "string",
+        "expiry": "timestamp"
+      },
+      "storage_provider": "supabase",
+      "max_vectors": 25000,
+      "priority": "medium",
+      "ttl_hours": 24
+    },
+    "session_memory": {
+      "description": "User session persistence",
+      "embedding_function": "sentence-transformers", 
+      "metadata_schema": {
+        "user_id": "string",
+        "preferences": "object",
+        "history": "array",
+        "context_state": "object"
+      },
+      "storage_provider": "supabase",
+      "max_vectors": 25000,
+      "priority": "high"
+    }
+  },
+  "global_settings": {
+    "default_embedding_function": "sentence-transformers",
+    "fallback_embedding_function": "gemini-pro",
+    "auto_cleanup_enabled": true,
+    "similarity_threshold": 0.75,
+    "batch_insert_size": 100
+  }
+}

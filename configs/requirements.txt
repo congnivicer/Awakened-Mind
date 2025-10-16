@@ -1,0 +1,23 @@
+# NHB Knowledge Infrastructure Dependencies
+# Install with: pip3 install -r requirements.txt
+
+# Core async HTTP client for GitHub API
+aiohttp>=3.8.0
+
+# Job scheduling for nightly harvests
+schedule>=1.2.0
+
+# ChromaDB vector database (if not already installed)
+chromadb>=0.4.15
+
+# HTTP requests (fallback)
+requests>=2.28.0
+
+# JSON and data processing
+python-dateutil>=2.8.2
+
+# Optional: Enhanced logging and monitoring
+rich>=13.0.0
+
+# Optional: GitHub API token support
+PyGithub>=1.58.0

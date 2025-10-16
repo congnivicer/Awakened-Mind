@@ -1,0 +1,80 @@
+{
+  "primary_email": "vetpalnpo@gmail.com",
+  "cloud_providers": {
+    "zilliz": {
+      "description": "Primary vector storage - 3M vectors across 3 accounts",
+      "accounts": [
+        {
+          "email": "vetpalnpo@gmail.com",
+          "capacity_vectors": 1000000,
+          "collections": ["github_projects", "technical_docs"],
+          "priority": 1
+        },
+        {
+          "email": "vetpalnpo+zilliz2@gmail.com",
+          "capacity_vectors": 1000000,
+          "collections": ["nhb_interactions", "current_events"],
+          "priority": 2
+        },
+        {
+          "email": "vetpalnpo+zilliz3@gmail.com",
+          "capacity_vectors": 1000000,
+          "collections": ["code_patterns", "collective_wisdom"],
+          "priority": 3
+        }
+      ],
+      "total_capacity": 3000000
+    },
+    "supabase": {
+      "description": "Specialized collections - 150k vectors across 3 accounts",
+      "accounts": [
+        {
+          "email": "vetpalnpo@gmail.com",
+          "capacity_vectors": 50000,
+          "collections": ["realtime_cache", "session_memory"],
+          "priority": 1
+        },
+        {
+          "email": "vetpalnpo+supa2@gmail.com",
+          "capacity_vectors": 50000,
+          "collections": ["user_interactions", "search_cache"],
+          "priority": 2
+        },
+        {
+          "email": "vetpalnpo+supa3@gmail.com",
+          "capacity_vectors": 50000,
+          "collections": ["analytics_data", "backup_vectors"],
+          "priority": 3
+        }
+      ],
+      "total_capacity": 150000
+    },
+    "google_gemini": {
+      "description": "AI processing and embeddings",
+      "account": {
+        "email": "vetpalnpo@gmail.com",
+        "tier": "pro",
+        "free_period_months": 12,
+        "features": ["embeddings", "text_generation", "code_analysis"]
+      }
+    }
+  },
+  "routing_strategy": {
+    "default_provider": "zilliz",
+    "fallback_provider": "supabase",
+    "load_balancing": true,
+    "geo_optimization": true
+  },
+  "sync_settings": {
+    "bidirectional": true,
+    "conflict_resolution": "timestamp_latest",
+    "backup_frequency": "daily",
+    "cross_provider_redundancy": true
+  },
+  "free_tier_management": {
+    "monitor_usage": true,
+    "auto_rotate_accounts": true,
+    "usage_alert_threshold": 0.8,
+    "expansion_strategy": "create_new_email"
+  }
+}

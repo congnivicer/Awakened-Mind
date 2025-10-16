@@ -1,0 +1,46 @@
+{
+  "system": {
+    "name": "NHB Knowledge Infrastructure",
+    "version": "1.0.0",
+    "deployment_mode": "cloud_first",
+    "local_cache_size_gb": 2,
+    "sync_interval_minutes": 15
+  },
+  "orchestrator": {
+    "max_concurrent_operations": 5,
+    "retry_attempts": 3,
+    "timeout_seconds": 30,
+    "health_check_interval": 60
+  },
+  "embeddings": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "dimension": 384,
+    "batch_size": 32,
+    "fallback_model": "google/gemini-pro-embeddings"
+  },
+  "storage": {
+    "local_cache_path": "./cache/local_vectors",
+    "navigation_db_path": "./cache/knowledge_map.db",
+    "backup_enabled": true,
+    "compression": "gzip"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "./logs/nhb_system.log",
+    "max_size_mb": 50,
+    "backup_count": 5
+  },
+  "security": {
+    "encryption_enabled": true,
+    "api_key_rotation_days": 30,
+    "rate_limit_per_minute": 100
+  },
+  "user": {
+    "email": "vetpalnpo@gmail.com",
+    "preferences": {
+      "direct_feedback": true,
+      "nhb_perspective": true,
+      "analytical_depth": true
+    }
+  }
+}
