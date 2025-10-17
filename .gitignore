@@ -1,0 +1,43 @@
+# Node
+node_modules/
+dist/
+.env*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Build
+*.bak
+*.tmp
+*.lock
+
+# Static/Assets
+public/
+assets/
+static/
+templates/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Test/Debug
+*.test.*
+*.spec.*
+coverage/
+
+# Misc
+*.swp
+*.swo
+
+# Backup
+backup*/
+*.tar.gz
